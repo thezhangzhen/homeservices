@@ -1,0 +1,161 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
+
+    <ListView
+        android:id="@+id/poi_lv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <com.baidu.mapapi.map.MapView
+        android:id="@+id/map_mv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:clickable="true" />
+
+    <ScrollView
+        android:id="@+id/edit_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/lat_tv"
+                style="@style/commen_text_view"
+                android:text="@string/lat_string" />
+
+            <TextView
+                android:id="@+id/lat_value_tv"
+                style="@style/commen_text_view"
+                android:layout_alignBottom="@+id/lat_tv"
+                android:layout_toRightOf="@+id/lat_tv" />
+
+            <TextView
+                android:id="@+id/lng_tv"
+                style="@style/commen_text_view"
+                android:layout_below="@+id/lat_tv"
+                android:text="@string/lng_string" />
+
+            <TextView
+                android:id="@+id/lng_value_tv"
+                style="@style/commen_text_view"
+                android:layout_alignBottom="@+id/lng_tv"
+                android:layout_toRightOf="@+id/lng_tv" />
+
+            <TextView
+                android:id="@+id/address_ro_tv"
+                style="@style/commen_text_view"
+                android:layout_below="@+id/lng_tv"
+                android:text="@string/address_string" />
+
+            <TextView
+                android:id="@+id/address_ro_value_tv"
+                style="@style/commen_text_view"
+                android:layout_alignBottom="@+id/address_ro_tv"
+                android:layout_toRightOf="@+id/address_ro_tv" />
+
+            <TextView
+                android:id="@+id/splite"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/address_ro_tv"
+                android:layout_margin="10dp"
+                android:background="#333333" />
+
+            <Spinner
+                android:id="@+id/type_sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/splite"
+                android:layout_marginTop="20dp" />
+
+            <TextView
+                android:id="@+id/name_tv"
+                style="@style/commen_text_view"
+                android:layout_below="@+id/type_sp"
+                android:text="@string/name_string" />
+
+            <EditText
+                android:id="@+id/name_et"
+                style="@style/single_edit_text_view"
+                android:layout_alignBottom="@+id/name_tv"
+                android:layout_toRightOf="@+id/name_tv" />
+
+            <TextView
+                android:id="@+id/address_w_tv"
+                style="@style/commen_text_view"
+                android:layout_below="@+id/name_tv"
+                android:text="@string/address_string" />
+
+            <EditText
+                android:id="@+id/address_w_et"
+                style="@style/single_edit_text_view"
+                android:layout_alignBottom="@+id/address_w_tv"
+                android:layout_toRightOf="@+id/address_w_tv" />
+
+            <TextView
+                android:id="@+id/phone_tv"
+                style="@style/commen_text_view"
+                android:layout_below="@+id/address_w_tv"
+                android:text="@string/phone_string" />
+
+            <EditText
+                android:id="@+id/phone_et"
+                style="@style/single_edit_text_view"
+                android:layout_alignBottom="@+id/phone_tv"
+                android:layout_toRightOf="@+id/phone_tv" />
+
+            <TextView
+                android:id="@+id/mail_tv"
+                style="@style/commen_text_view"
+                android:layout_below="@+id/phone_tv"
+                android:text="@string/mail_string" />
+
+            <EditText
+                android:id="@+id/mail_et"
+                style="@style/single_edit_text_view"
+                android:layout_alignBottom="@+id/mail_tv"
+                android:layout_toRightOf="@+id/mail_tv" />
+
+            <TextView
+                android:id="@+id/qq_tv"
+                style="@style/commen_text_view"
+                android:layout_below="@+id/mail_tv"
+                android:text="@string/qq_string" />
+
+            <EditText
+                android:id="@+id/qq_et"
+                style="@style/single_edit_text_view"
+                android:layout_alignBottom="@+id/qq_tv"
+                android:layout_toRightOf="@+id/qq_tv" />
+
+            <TextView
+                android:id="@+id/des_tv"
+                style="@style/commen_text_view"
+                android:layout_below="@+id/qq_tv"
+                android:text="@string/des_string" />
+
+            <EditText
+                android:id="@+id/des_et"
+                style="@style/multi_edit_text_view"
+                android:layout_below="@+id/des_tv" />
+
+            <Button
+                android:id="@+id/save_bt"
+                style="@style/commen_button"
+                android:layout_below="@+id/des_et"
+                android:layout_margin="10dp"
+                android:text="@string/save_bt_caption" />
+        </RelativeLayout>
+    </ScrollView>
+
+</LinearLayout>

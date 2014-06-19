@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="typeArray">
+        <item>@string/type_canguan</item>
+        <item>@string/type_songshui</item>
+        <item>@string/type_jiazheng</item>
+        <item>@string/type_youhui</item>
+        <item>@string/type_tianqi</item>
+        <item>@string/action_settings</item>
+    </string-array>
+
+</resources>

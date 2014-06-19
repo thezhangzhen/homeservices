@@ -1,0 +1,98 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pop_bg_color" >
+
+    <ImageView
+        android:id="@+id/photo_iv"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_margin="30dp"
+        android:contentDescription="@null"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg1" />
+
+    <ImageView
+        android:id="@+id/close_iv"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:contentDescription="@null"
+        android:scaleType="centerCrop"
+        android:src="@drawable/close" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/photo_iv"
+        android:layout_margin="20dp" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/name_tv"
+                style="@style/commen_text_view"
+                android:layout_alignParentTop="true"
+                android:hint="@string/name_string" />
+
+            <TextView
+                android:id="@+id/des_tv"
+                style="@style/commen_text_view"
+                android:layout_below="@+id/name_tv"
+                android:hint="@string/des_string" />
+
+            <TextView
+                android:id="@+id/address_w_tv"
+                style="@style/commen_text_view"
+                android:layout_below="@+id/des_tv"
+                android:text="@string/address_string" />
+
+            <TextView
+                android:id="@+id/address_w_et"
+                style="@style/single_edit_text_view"
+                android:layout_alignBottom="@+id/address_w_tv"
+                android:layout_toRightOf="@+id/address_w_tv" />
+
+            <TextView
+                android:id="@+id/phone_tv"
+                style="@style/commen_text_view"
+                android:layout_below="@+id/address_w_tv"
+                android:text="@string/phone_string" />
+
+            <TextView
+                android:id="@+id/phone_et"
+                style="@style/single_edit_text_view"
+                android:layout_alignBottom="@+id/phone_tv"
+                android:layout_toRightOf="@+id/phone_tv" />
+
+            <TextView
+                android:id="@+id/mail_tv"
+                style="@style/commen_text_view"
+                android:layout_below="@+id/phone_tv"
+                android:text="@string/mail_string" />
+
+            <TextView
+                android:id="@+id/mail_et"
+                style="@style/single_edit_text_view"
+                android:layout_alignBottom="@+id/mail_tv"
+                android:layout_toRightOf="@+id/mail_tv" />
+
+            <TextView
+                android:id="@+id/qq_tv"
+                style="@style/commen_text_view"
+                android:layout_below="@+id/mail_tv"
+                android:text="@string/qq_string" />
+
+            <TextView
+                android:id="@+id/qq_et"
+                style="@style/single_edit_text_view"
+                android:layout_alignBottom="@+id/qq_tv"
+                android:layout_toRightOf="@+id/qq_tv" />
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">HomeService</string>
+    
+    <string name="null_error">必填项</string>
+    <string name="action_settings">设置</string>
+    <string name="hello_world">Hello world!</string>
+<!-- tab title -->
+    <string name="type_canguan">订餐</string>
+    <string name="type_songshui">送水</string>
+    <string name="type_jiazheng">家政</string>
+    <string name="type_youhui">优惠信息</string>
+    <string name="type_tianqi">天气预报</string>
+    
+<!-- setting -->
+    <string name="type_select_string">请选择类型</string>
+    <string name="lat_string">精度</string>
+    <string name="lng_string">纬度</string>
+    <string name="name_string">名称</string>
+    <string name="address_string">地址</string>
+    <string name="phone_string">电话</string>
+    <string name="mail_string">邮箱</string>
+    <string name="qq_string">QQ</string>
+    <string name="des_string">描述</string>
+    <string name="save_bt_caption">保存</string>
+    <string name="save_success">保存成功</string>
+    <string name="save_failed">保存失败</string>
+    
+    
+    <string name="get_services_failed">获取服务信息失败</string>
+    
+</resources>
