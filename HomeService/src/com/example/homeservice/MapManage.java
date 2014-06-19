@@ -1,5 +1,6 @@
 package com.example.homeservice;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 
 import android.app.Activity;
@@ -29,6 +30,7 @@ import com.baidu.mapapi.map.PopupOverlay;
 import com.baidu.mapapi.search.MKAddrInfo;
 import com.baidu.mapapi.search.MKBusLineResult;
 import com.baidu.mapapi.search.MKDrivingRouteResult;
+import com.baidu.mapapi.search.MKPoiInfo;
 import com.baidu.mapapi.search.MKPoiResult;
 import com.baidu.mapapi.search.MKSearch;
 import com.baidu.mapapi.search.MKSearchListener;
@@ -138,8 +140,8 @@ public class MapManage {
 				// // 小于200毫米则不考虑是否移动
 				// isClick = true;
 				// }
-				if ((Math.abs(clickX - event.getX())
-						+ Math.abs(clickY - event.getY()))>20) {
+				if ((Math.abs(clickX - event.getX()) + Math.abs(clickY
+						- event.getY())) > 20) {
 					return false;
 				}
 				if (isClick) {
@@ -228,9 +230,9 @@ public class MapManage {
 		mMkSearch.reverseGeocode(geoPoint);
 	}
 
-	public void showPoiOverlay(Activity activity, MKPoiResult result) {
+	public void showPoiOverlay(Activity activity, ArrayList<MKPoiInfo> mkpois) {
 		Log.i(LOG_TAG, "start show pois");
-		if (result == null) {
+		if (mkpois == null) {
 			return;
 		}
 		if (poiOverlay != null) {
@@ -238,7 +240,7 @@ public class MapManage {
 		}
 		// 将poi结果显示到地图上
 		poiOverlay = new PoiOverlay(activity, mMapView);
-		poiOverlay.setData(result.getAllPoi());
+		poiOverlay.setData(mkpois);
 		mMapView.getOverlays().add(poiOverlay);
 		mMapView.refresh();
 	}
@@ -296,7 +298,7 @@ public class MapManage {
 			if (mGetPoiCallback != null) {
 				mGetPoiCallback.gotPoi(result, type, error);
 			}
-			showPoiOverlay(mActivity, result);
+			showPoiOverlay(mActivity, result.getAllPoi());
 		}
 
 		@Override

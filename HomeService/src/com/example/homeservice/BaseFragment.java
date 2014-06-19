@@ -11,6 +11,8 @@ import com.example.homeservice.http.ProtocolType;
 import com.example.homeservice.http.RequestResult;
 import com.example.homeservice.http.modle.GetServices;
 import com.example.homeservice.http.modle.Poi;
+import com.example.homeservice.http.modle.ServiceListResult;
+import com.example.homeservice.util.BDUtil;
 import com.example.homeservice.util.Util;
 
 import android.app.Fragment;
@@ -51,17 +53,16 @@ public class BaseFragment extends Fragment {
 	private void initListView() {
 		ListView serviceListView = (ListView) rootView
 				.findViewById(R.id.poi_lv);
-		mAdapter = new PoiListAdapter(this.getActivity(),
-				poiInfos);
+		mAdapter = new PoiListAdapter(this.getActivity(), poiInfos);
 		serviceListView.setAdapter(mAdapter);
 		serviceListView.setOnItemClickListener(servicesItemClickListener);
 	}
-	
+
 	private OnItemClickListener servicesItemClickListener = new OnItemClickListener() {
 		@Override
-		public void onItemClick(AdapterView<?> listView, View parent, int position,
-				long id) {
-			
+		public void onItemClick(AdapterView<?> listView, View parent,
+				int position, long id) {
+
 		}
 	};
 
@@ -93,8 +94,10 @@ public class BaseFragment extends Fragment {
 
 	private RequestResult servicesResult = new RequestResult() {
 		public void onSuccess(Object o) {
-
-			updateDatas();
+			ServiceListResult result = (ServiceListResult) o;
+			if (result != null) {
+				updateDatas(result.getData());
+			}
 		};
 
 		public void onFailure(CharSequence failure) {
@@ -106,16 +109,17 @@ public class BaseFragment extends Fragment {
 		};
 	};
 
-	protected void updateDatas(ArrayList<Poi> newPois) {
+	protected void updateDatas(List<Poi> newPois) {
 		updateList(newPois);
 		updateMapView(newPois);
 	}
 
-	private void updateMapView(ArrayList<Poi> newPois) {
-		
+	private void updateMapView(List<Poi> newPois) {
+		mMapManage.showPoiOverlay(this.getActivity(),
+				BDUtil.convertPoiInfos(newPois));
 	}
 
-	private void updateList(ArrayList<Poi> newPois) {
+	private void updateList(List<Poi> newPois) {
 		poiInfos.clear();
 		poiInfos.addAll(newPois);
 		mAdapter.notifyDataSetChanged();

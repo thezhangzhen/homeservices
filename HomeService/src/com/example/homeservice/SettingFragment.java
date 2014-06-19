@@ -52,7 +52,7 @@ public class SettingFragment extends BaseFragment {
 	private String[] typeStrings;
 
 	private ListView poiListView;
-	private PoiListAdapter poiListAdapter;
+	private MKPoiListAdapter poiListAdapter;
 	private ArrayList<MKPoiInfo> mPoiInfos;
 
 	private GeoPoint clickPoint;
@@ -71,7 +71,7 @@ public class SettingFragment extends BaseFragment {
 		poiListView = (ListView) rootView.findViewById(R.id.poi_lv);
 		mPoiInfos = new ArrayList<MKPoiInfo>();
 		
-		poiListAdapter = new PoiListAdapter(this.getActivity(), mPoiInfos);
+		poiListAdapter = new MKPoiListAdapter(this.getActivity(), mPoiInfos);
 		poiListView.setAdapter(poiListAdapter);
 		poiListView.setOnItemClickListener(poiItemClick);
 	}

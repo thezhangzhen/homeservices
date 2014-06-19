@@ -3,7 +3,6 @@ package com.example.homeservice;
 import java.util.ArrayList;
 
 import com.baidu.mapapi.search.MKPoiInfo;
-import com.example.homeservice.http.modle.Poi;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -12,11 +11,11 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-public class PoiListAdapter extends BaseAdapter {
-	private ArrayList<Poi> mPoiInfos;
+public class MKPoiListAdapter extends BaseAdapter {
+	private ArrayList<MKPoiInfo> mPoiInfos;
 	private LayoutInflater mInflater;
 
-	public PoiListAdapter(Context context, ArrayList<Poi> poiInfos) {
+	public MKPoiListAdapter(Context context, ArrayList<MKPoiInfo> poiInfos) {
 		mInflater = (LayoutInflater) context
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		this.mPoiInfos = poiInfos;
@@ -57,11 +56,11 @@ public class PoiListAdapter extends BaseAdapter {
 		} else {
 			viewHolder = (ViewHolder) convertView.getTag();
 		}
-		Poi info = mPoiInfos.get(position);
+		MKPoiInfo info = mPoiInfos.get(position);
 		if (info != null) {
 			viewHolder.indexView.setText(position + 1 + "");
-			viewHolder.nameView.setText(info.getName());
-			viewHolder.phoneView.setText(info.getPhone());
+			viewHolder.nameView.setText(info.name);
+			viewHolder.phoneView.setText(info.phoneNum);
 		}
 		return convertView;
 	}
