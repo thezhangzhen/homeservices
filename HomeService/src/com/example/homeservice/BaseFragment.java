@@ -62,7 +62,6 @@ public class BaseFragment extends Fragment {
 		@Override
 		public void onItemClick(AdapterView<?> listView, View parent,
 				int position, long id) {
-
 		}
 	};
 
